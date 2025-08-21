@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity // Significa que essa classe será mapeada para uma tabela do Banco de dados
-@Table(name = "td_game") // Nome da tabela do banco
+@Table(name = "tb_game") // Nome da tabela do banco
 public class Game {
 
     @Id // Definindo qual campo é o ID
@@ -19,7 +19,11 @@ public class Game {
     private String platforms;
     private Double score;
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+
+    @Column(columnDefinition = "TEXT") // Definindo a columa como TEXT para textos gigantes
     private String longDescription;
 
     public Game(){
